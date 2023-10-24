@@ -3,8 +3,7 @@ export const order = async () => {
     // TODO, merge options.headers if exist
     headers: {
       accept: 'application/json',
-      'api-key':
-        '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',
+      'api-key': process.env.BREVO_API_KEY || '',
     },
     method: 'POST',
     body: JSON.stringify({
