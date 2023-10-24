@@ -28,6 +28,8 @@ export const handler = async (_event: APIGatewayEvent, _context: Context) => {
     },
   })
 
+  console.log('serverless function is called')
+
   return {
     statusCode: 200,
     headers: {
