@@ -4,5 +4,6 @@ import fns from 'src/inngest'
 import { inngest } from 'src/inngest/client'
 
 export const handler = serve(inngest, fns, {
-  servePath: '/api/inngest',
+  servePath: '/.redwood/functions/inngest',
+  signingKey: process.env.SIGNING_KEY,
 })

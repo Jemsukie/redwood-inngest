@@ -4,7 +4,7 @@
     "build": "rw build",
     "dev": "concurrently --raw \"yarn:dev:*\"",
     "dev:rw": "rw dev",
-    "dev:inngest": "npx --yes inngest-cli@latest dev"
+    "dev:inngest": "npx inngest-cli@latest dev -u http://localhost:3000/.redwood/functions/inngest"
   },
   "workspaces": {
     "packages": [
@@ -28,5 +28,8 @@
   "prisma": {
     "seed": "yarn rw exec seed"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.2.3",
+  "dependencies": {
+    "inngest": "^3.2.1"
+  }
 }
