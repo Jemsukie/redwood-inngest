@@ -5,5 +5,5 @@ import { Inngest } from 'inngest'
 
 export const inngest = new Inngest({
   name: 'My RedwoodJS App',
-  eventKey: 'event',
+  eventKey: process.env.INNGEST_EVENT_KEY,
 })
