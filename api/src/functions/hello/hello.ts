@@ -22,34 +22,17 @@ import { logger } from 'src/lib/logger'
 export const handler = async (_event: APIGatewayEvent, _context: Context) => {
   logger.info('Invoked hello function')
 
-  const callInngest = inngest.send('app/order.runner', {
-    data: {
-      user_account_id: 'Jemuel',
-    },
-  })
-
-  await Promise.all([
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-    callInngest,
-  ])
+  await Promise.all(
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(
+      (i) => {
+        inngest.send('app/order.runner', {
+          data: {
+            user_account_id: `Event-${i}`,
+          },
+        })
+      }
+    )
+  )
 
   console.log('serverless function is called')
 
