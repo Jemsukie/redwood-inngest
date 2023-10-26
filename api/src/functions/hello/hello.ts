@@ -22,7 +22,7 @@ import { logger } from 'src/lib/logger'
 export const handler = async (_event: APIGatewayEvent, _context: Context) => {
   logger.info('Invoked hello function')
 
-  await inngest.send('test/hello.world', {
+  await inngest.send('app/order.runner', {
     data: {
       user_account_id: 'Jemuel',
     },
