@@ -22,15 +22,38 @@ import { logger } from 'src/lib/logger'
 export const handler = async (_event: APIGatewayEvent, _context: Context) => {
   logger.info('Invoked hello function')
 
-  await inngest.send('app/order.runner', {
+  const callInngest = inngest.send('app/order.runner', {
     data: {
       user_account_id: 'Jemuel',
     },
   })
 
+  await Promise.all([
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+    callInngest,
+  ])
+
   console.log('serverless function is called')
 
-  return await {
+  return {
     statusCode: 200,
     headers: {
       'Content-Type': 'application/json',
